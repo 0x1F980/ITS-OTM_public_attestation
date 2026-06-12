@@ -1,0 +1,16 @@
+[package]
+name = "its_otm_public_attestation"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "its_otm"
+path = "src/bin/its_otm.rs"
+
+[dependencies]
+subtle = { version = "2.5.0", default-features = false }
+zeroize = { version = "1.7.0", default-features = false, features = ["derive", "alloc"] }
+
+[features]
+default = []
+m61 = []
