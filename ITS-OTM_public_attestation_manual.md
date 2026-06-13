@@ -3,6 +3,9 @@
 ## License: GNU GPLv3 Only
 ## Target: Systems Software Engineers, Integrators & Security Auditors
 
+> **Scope:** [ITS-OTM_SECURITY_LAYERS.md](ITS-OTM_SECURITY_LAYERS.md) — API maps to WC-MAC ITS layer.
+
+
 ---
 
 ## 1. Build & Test

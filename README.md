@@ -3,6 +3,8 @@
 ## License: GNU GPLv3 Only
 ## Target: Cryptographers, Security Auditors, High-Assurance Systems Engineers
 
+**Read first:** **[ITS-OTM_SECURITY_LAYERS.md](ITS-OTM_SECURITY_LAYERS.md)** — WC-MAC is ITS; **no SHA256 on attestation tags**. Ecosystem master: [ITS_SECURITY_LAYERS.md](https://github.com/0x1F464/ITS/blob/master/ITS_SECURITY_LAYERS.md).
+
 Welcome to the **`0x1F464/ITS-OTM_public_attestation`** repository. This is a fully standalone, zero-dependency, `#![no_std]` Rust implementation of **Wegman-Carter One-Time MAC** tags bound to **non-reproducible SSS forward/backward chains**, enabling **public verification** without access to the signer's private state.
 
 One-time keys are revealed **only with** each published attestation bundle — verifiers cannot forge new messages.
@@ -21,12 +23,16 @@ docker build -t its-otm:local .                         # optional static musl i
 
 ---
 
-## The 6-Pillar High-Assurance Documentation Architecture
+## The 7-Pillar High-Assurance Documentation Architecture
 
 ```
                   +----------------------------------------------+
                   |                  README.md                   |
                   |                (This Portal)                 |
+                  +----------------------+-----------------------+
+                                         |
+                  +----------------------v-----------------------+
+                  |   ITS-OTM_SECURITY_LAYERS.md (#0 — ITS scope)  |
                   +----------------------+-----------------------+
                                          |
          +-------------------------------+-------------------------------+
@@ -46,6 +52,7 @@ docker build -t its-otm:local .                         # optional static musl i
 +-----------------+             +-----------------+             +-----------------+
 ```
 
+0. **[Security Layers (ITS-OTM_SECURITY_LAYERS.md)](ITS-OTM_SECURITY_LAYERS.md):** WC-MAC ITS scope; no SHA256 on tag; key reveal timing.
 1. **[Vision (ITS-OTM_public_attestation_vision.md)](ITS-OTM_public_attestation_vision.md):** Public attestation threat model; one-time key reveal vs pre-shared forging.
 2. **[Mathematics (ITS-OTM_public_attestation_mathematics.md)](ITS-OTM_public_attestation_mathematics.md):** WC forgery bounds, SSS chain binding, worked M31 example ($T=4578$).
 3. **[Manual (ITS-OTM_public_attestation_manual.md)](ITS-OTM_public_attestation_manual.md):** Rust API, `PublicAttestationBundle`, CLI, build pipeline.

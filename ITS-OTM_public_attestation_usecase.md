@@ -3,6 +3,9 @@
 ## License: GNU GPLv3 Only
 ## Target: Integrators, Application Developers & Fork Maintainers
 
+> **Scope:** [ITS-OTM_SECURITY_LAYERS.md](ITS-OTM_SECURITY_LAYERS.md).
+
+
 ---
 
 ## 1. Public Audit of Sneakernet / AEH Payloads

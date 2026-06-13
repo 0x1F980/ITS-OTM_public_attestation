@@ -3,6 +3,9 @@
 ## License: GNU GPLv3 Only
 ## Target: High-Assurance Operators & Physical-Security Teams
 
+> **Scope:** [ITS-OTM_SECURITY_LAYERS.md](ITS-OTM_SECURITY_LAYERS.md) — key reveal timing §2; integrity vs authorship §6.
+
+
 ---
 
 ## 1. One-Time Keys in RAM

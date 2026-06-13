@@ -3,6 +3,9 @@
 ## License: GNU GPLv3 Only
 ## Target: Mathematicians, Cryptographers & Auditing Teams
 
+> **Scope:** [ITS-OTM_SECURITY_LAYERS.md](ITS-OTM_SECURITY_LAYERS.md) — proofs below are ITS (WC bound $1/p$).
+
+
 ---
 
 ## 1. Wegman-Carter One-Time MAC Forgery Bound

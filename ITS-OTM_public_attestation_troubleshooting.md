@@ -3,6 +3,9 @@
 ## License: GNU GPLv3 Only
 ## Target: Operators, Integrators & Security Auditors
 
+> **Scope:** [ITS-OTM_SECURITY_LAYERS.md](ITS-OTM_SECURITY_LAYERS.md).
+
+
 ---
 
 ## 1. Verification Returns INVALID

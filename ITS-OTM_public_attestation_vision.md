@@ -3,6 +3,9 @@
 ## License: GNU GPLv3 Only
 ## Target: Cryptographers, Security Auditors, High-Assurance Architects
 
+> **Scope:** [ITS-OTM_SECURITY_LAYERS.md](ITS-OTM_SECURITY_LAYERS.md) — WC-MAC attestation is **ITS**; no SHA256 on tag.
+
+
 ---
 
 ## 1. Introduction & Attestation Vision
