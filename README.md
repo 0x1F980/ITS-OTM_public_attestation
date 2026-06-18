@@ -3,18 +3,18 @@
 ## License: GNU GPLv3 Only
 ## Target: Cryptographers, Security Auditors, High-Assurance Systems Engineers
 
-**Read first:** **[ITS-OTM_SECURITY_LAYERS.md](ITS-OTM_SECURITY_LAYERS.md)** — WC-MAC is ITS; **no SHA256 on attestation tags**. Ecosystem master: [ITS_SECURITY_LAYERS.md](https://github.com/0x1F464/ITS/blob/master/ITS_SECURITY_LAYERS.md).
+**Read first:** **[ITS-OTM_SECURITY_LAYERS.md](ITS-OTM_SECURITY_LAYERS.md)** — WC-MAC is ITS; **no SHA256 on attestation tags**. Ecosystem master: [ITS_SECURITY_LAYERS.md](https://github.com/0x1F980/ITS-ROUTING/blob/master/ITS_ECOSYSTEM.md).
 
-Welcome to the **`0x1F464/ITS-OTM_public_attestation`** repository. This is a standalone `#![no_std]` Rust implementation of **Wegman-Carter One-Time MAC** tags bound to **non-reproducible SSS forward/backward chains**, enabling **public verification** without access to the signer's private state.
+Welcome to the **`0x1F980/ITS-OTM_public_attestation`** repository. This is a standalone `#![no_std]` Rust implementation of **Wegman-Carter One-Time MAC** tags bound to **non-reproducible SSS forward/backward chains**, enabling **public verification** without access to the signer's private state.
 
 Field arithmetic and SSS chain helpers come from the shared **[SSS_CHAIN](https://github.com/0x1F980/SSS_CHAIN)** crate (`sss_chain` dependency).
 
 One-time keys are revealed **only with** each published attestation bundle — verifiers cannot forge new messages.
 
-**Repository:** [https://github.com/0x1F464/ITS-OTM_public_attestation](https://github.com/0x1F464/ITS-OTM_public_attestation)
+**Repository:** [https://github.com/0x1F980/ITS-OTM_public_attestation](https://github.com/0x1F980/ITS-OTM_public_attestation)
 
 ```bash
-git clone git@github.com:0x1F464/ITS-OTM_public_attestation.git
+git clone git@github.com:0x1F980/ITS-OTM_public_attestation.git
 cd ITS-OTM_public_attestation
 cargo test
 cargo build --release --bin its_otm
@@ -69,10 +69,11 @@ docker build -t its-otm:local .                         # optional static musl i
 | Repository | Role |
 |---|---|
 | [SSS_CHAIN](https://github.com/0x1F980/SSS_CHAIN) | Shared SSS field, epoch, link API |
-| [ITS](https://github.com/0x1F464/ITS) | Core SCPST secrecy, routing, tunnel |
-| [ITS-self_enclosed_timelock](https://github.com/0x1F464/ITS-self_enclosed_timelock) | Time-lock puzzles |
+| [ITS-ROUTING/its_transport](https://github.com/0x1F980/ITS-ROUTING) | Transport (onion, tunnel) — archived `core_logic` |
+| [ITS-asymmetric](https://github.com/0x1F980/ITS-asymmetric) | Shannon wire |
+| [ITS-self_enclosed_timelock](https://github.com/0x1F980/ITS-self_enclosed_timelock) | Time-lock puzzles |
 | **ITS-OTM_public_attestation** (this repo) | Public OTM attestation |
-| [ITS-routing](https://github.com/0x1F464/ITS-routing) | CLI orchestration |
+| [ITS-routing](https://github.com/0x1F980/ITS-ROUTING) | CLI orchestration |
 
 ---
 

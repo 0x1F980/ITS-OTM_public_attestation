@@ -5,7 +5,7 @@
 
 **Read this document first** before auditing this repository.
 
-**Ecosystem master:** [ITS_SECURITY_LAYERS.md](https://github.com/0x1F464/ITS/blob/master/ITS_SECURITY_LAYERS.md) (ITS core repo).
+**Ecosystem master:** [ITS_SECURITY_LAYERS.md](https://github.com/0x1F980/ITS-ROUTING/blob/master/ITS_ECOSYSTEM.md) (ITS core repo).
 
 ---
 

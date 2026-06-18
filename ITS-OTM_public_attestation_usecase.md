@@ -52,7 +52,7 @@ No shared secrets required beyond what is **already in the published bundle**.
 
 ## 4. Forking Guide
 
-1. Fork [ITS-OTM_public_attestation](https://github.com/0x1F464/ITS-OTM_public_attestation).
+1. Fork [ITS-OTM_public_attestation](https://github.com/0x1F980/ITS-OTM_public_attestation).
 2. Preserve `#![no_std]` + constant-time discipline in field arithmetic.
 3. If changing tag formula, update `verify_public_attestation` and all 6 documentation pillars.
 4. Downstream crates pin git rev:

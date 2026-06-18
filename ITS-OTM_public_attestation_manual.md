@@ -11,7 +11,7 @@
 ## 1. Build & Test
 
 ```bash
-git clone git@github.com:0x1F464/ITS-OTM_public_attestation.git
+git clone git@github.com:0x1F980/ITS-OTM_public_attestation.git
 cd ITS-OTM_public_attestation
 cargo test
 cargo build --release --bin its_otm
@@ -154,7 +154,7 @@ prev_backward_y: 8
 
 Add to `Cargo.toml`:
 ```toml
-its_otm_public_attestation = { git = "ssh://git@github.com/0x1F464/ITS-OTM_public_attestation.git" }
+its_otm_public_attestation = { git = "ssh://git@github.com/0x1F980/ITS-OTM_public_attestation.git" }
 ```
 
 ITS-core re-exports: `pub use its_otm_public_attestation as otm;`

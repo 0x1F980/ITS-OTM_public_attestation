@@ -32,7 +32,6 @@ dependencies = [
 [[package]]
 name = "sss_chain"
 version = "0.1.0"
-source = "git+file:///home/user/SSS_CHAIN#f329bde75e6a9619060843ef1cc89256c6c9d88b"
 dependencies = [
  "subtle",
  "zeroize",
@@ -82,6 +81,10 @@ dependencies = [
 ]
 
 [[patch.unused]]
+name = "its_fingerprint_erasure"
+version = "0.8.1"
+
+[[patch.unused]]
 name = "its_routing"
 version = "0.1.0"
 
@@ -90,19 +93,11 @@ name = "its_transport"
 version = "0.1.0"
 
 [[patch.unused]]
-name = "sss_chain"
+name = "its_ledger"
 version = "0.1.0"
 
 [[patch.unused]]
 name = "its_hardware"
-version = "0.1.0"
-
-[[patch.unused]]
-name = "its_fingerprint_erasure"
-version = "0.8.1"
-
-[[patch.unused]]
-name = "its_ledger"
 version = "0.1.0"
 
 [[patch.unused]]

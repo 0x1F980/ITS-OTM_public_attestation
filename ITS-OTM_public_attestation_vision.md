@@ -19,7 +19,7 @@ Standard message authentication (HMAC-SHA256, Ed25519) assumes a computationally
 
 This crate is a **standalone signing/attestation primitive**, distinct from SCPST payload secrecy (`ITS` core) and temporal delay (`ITS-self_enclosed_timelock`).
 
-**Repository:** [https://github.com/0x1F464/ITS-OTM_public_attestation](https://github.com/0x1F464/ITS-OTM_public_attestation)
+**Repository:** [https://github.com/0x1F980/ITS-OTM_public_attestation](https://github.com/0x1F980/ITS-OTM_public_attestation)
 
 ---
 
