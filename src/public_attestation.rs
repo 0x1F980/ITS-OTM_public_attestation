@@ -92,6 +92,17 @@ impl OtmChainSigner<2> {
     }
 }
 
+/// Deterministic field element from arbitrary bytes (FNV-1a → M31).
+/// Used to attest `.wire`, `public.key`, or piped ciphertext.
+pub fn message_from_bytes(data: &[u8]) -> FieldElement {
+    let mut h: u32 = 2166136261;
+    for b in data {
+        h ^= *b as u32;
+        h = h.wrapping_mul(16777619);
+    }
+    FieldElement::new(h)
+}
+
 /// Builds a public attestation bundle from explicit chain coordinates and one-time keys.
 pub fn create_public_attestation<const K: usize>(
     message: FieldElement,
@@ -158,6 +169,55 @@ mod tests {
             FieldElement::new(13),
         );
         assert!(bool::from(verify_public_attestation(&bundle)));
+    }
+
+    #[test]
+    fn test_message_from_bytes_deterministic() {
+        let a = message_from_bytes(b"wire payload");
+        let b = message_from_bytes(b"wire payload");
+        let c = message_from_bytes(b"other");
+        assert_eq!(a.value(), b.value());
+        assert_ne!(a.value(), c.value());
+    }
+
+    #[test]
+    fn test_wrong_tag_fails() {
+        let master_root = FieldElement::new(5);
+        let poly_backward = Polynomial::new([FieldElement::new(5), FieldElement::new(3)]);
+        let mut signer = OtmChainSigner::<2>::new(
+            master_root,
+            poly_backward,
+            (FieldElement::new(1), FieldElement::new(8)),
+            FieldElement::new(99),
+        );
+        let mut bundle = signer.sign(
+            FieldElement::new(42),
+            FieldElement::new(7),
+            FieldElement::new(11),
+            FieldElement::new(13),
+        );
+        bundle.tag = FieldElement::new(bundle.tag.value().wrapping_add(1));
+        assert!(!bool::from(verify_public_attestation(&bundle)));
+    }
+
+    #[test]
+    fn test_tampered_forward_share_fails() {
+        let master_root = FieldElement::new(5);
+        let poly_backward = Polynomial::new([FieldElement::new(5), FieldElement::new(3)]);
+        let mut signer = OtmChainSigner::<2>::new(
+            master_root,
+            poly_backward,
+            (FieldElement::new(1), FieldElement::new(8)),
+            FieldElement::new(99),
+        );
+        let mut bundle = signer.sign(
+            FieldElement::new(42),
+            FieldElement::new(7),
+            FieldElement::new(11),
+            FieldElement::new(13),
+        );
+        bundle.forward_point.1 = FieldElement::new(bundle.forward_point.1.value().wrapping_add(1));
+        assert!(!bool::from(verify_public_attestation(&bundle)));
     }
 
     #[test]

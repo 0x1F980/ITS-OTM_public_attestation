@@ -8,12 +8,18 @@
 
 extern crate alloc;
 
-pub mod field_arith;
-pub mod poly;
-pub mod trapdoor;
+pub mod field_arith {
+    pub use sss_chain::sss_chain_field::*;
+}
+
+pub mod poly {
+    pub use sss_chain::sss_chain_poly::*;
+}
+
 pub mod otm;
 pub mod public_attestation;
 
 pub use public_attestation::{
-    create_public_attestation, verify_public_attestation, OtmChainSigner, PublicAttestationBundle,
+    create_public_attestation, message_from_bytes, verify_public_attestation, OtmChainSigner,
+    PublicAttestationBundle,
 };

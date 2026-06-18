@@ -70,7 +70,7 @@ The backward share must lie on the unique degree-$(K-1)$ polynomial defined by t
 | **`ITS` (core)** | SCPST secrecy, routing, tunnel transport — consumes `otm::*` via re-export |
 | **`ITS-self_enclosed_timelock`** | Temporal delay + deniable time-lock puzzles |
 | **`ITS-OTM_public_attestation` (this repo)** | Public integrity attestation with one-time key reveal |
-| **`ITS-net`** | CLI orchestration (AEH, sneakernet, routing) |
+| **`ITS-routing`** | CLI orchestration (AEH, sneakernet, routing) |
 
 ---
 

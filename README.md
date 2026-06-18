@@ -5,7 +5,9 @@
 
 **Read first:** **[ITS-OTM_SECURITY_LAYERS.md](ITS-OTM_SECURITY_LAYERS.md)** — WC-MAC is ITS; **no SHA256 on attestation tags**. Ecosystem master: [ITS_SECURITY_LAYERS.md](https://github.com/0x1F464/ITS/blob/master/ITS_SECURITY_LAYERS.md).
 
-Welcome to the **`0x1F464/ITS-OTM_public_attestation`** repository. This is a fully standalone, zero-dependency, `#![no_std]` Rust implementation of **Wegman-Carter One-Time MAC** tags bound to **non-reproducible SSS forward/backward chains**, enabling **public verification** without access to the signer's private state.
+Welcome to the **`0x1F464/ITS-OTM_public_attestation`** repository. This is a standalone `#![no_std]` Rust implementation of **Wegman-Carter One-Time MAC** tags bound to **non-reproducible SSS forward/backward chains**, enabling **public verification** without access to the signer's private state.
+
+Field arithmetic and SSS chain helpers come from the shared **[SSS_CHAIN](https://github.com/0x1F980/SSS_CHAIN)** crate (`sss_chain` dependency).
 
 One-time keys are revealed **only with** each published attestation bundle — verifiers cannot forge new messages.
 
@@ -66,10 +68,11 @@ docker build -t its-otm:local .                         # optional static musl i
 
 | Repository | Role |
 |---|---|
+| [SSS_CHAIN](https://github.com/0x1F980/SSS_CHAIN) | Shared SSS field, epoch, link API |
 | [ITS](https://github.com/0x1F464/ITS) | Core SCPST secrecy, routing, tunnel |
 | [ITS-self_enclosed_timelock](https://github.com/0x1F464/ITS-self_enclosed_timelock) | Time-lock puzzles |
 | **ITS-OTM_public_attestation** (this repo) | Public OTM attestation |
-| [ITS-net](https://github.com/0x1F464/ITS-net) | CLI orchestration |
+| [ITS-routing](https://github.com/0x1F464/ITS-routing) | CLI orchestration |
 
 ---
 

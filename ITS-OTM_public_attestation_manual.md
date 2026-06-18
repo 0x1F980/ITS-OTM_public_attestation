@@ -109,9 +109,27 @@ pub fn verify_public_attestation<const K>(bundle: &PublicAttestationBundle<K>) -
 ## 5. CLI (`its_otm`)
 
 ```bash
-its_otm demo                    # print + verify deterministic M31 bundle
-its_otm verify --bundle FILE    # verify .otm text bundle; exit 0 if VALID
+its_otm keygen --out STATE          # create signer chain state (local, sequential)
+its_otm sign --state STATE --in PATH --out PATH   # attest bytes (PATH may be "-")
+its_otm verify --bundle PATH [--payload PATH]     # verify chain + optional payload binding
+its_otm demo                        # deterministic M31 example bundle
 ```
+
+Use `-` for stdin/stdout on `--in`, `--out`, and `--bundle`.
+
+### Pipe + ITS-asymmetric integration
+
+```bash
+its_asymmetric encrypt --pk bob.key --in letter.txt --out - 2>/dev/null | \
+  its_otm sign --state alice.state --in - --out letter.wire.otm
+
+its_otm verify --bundle letter.wire.otm --payload msg.wire
+its_asymmetric decrypt --pk bob.key --sk bob_sk --in msg.wire --out -
+```
+
+Cross-repo demo: `scripts/pipeline_demo.sh`.
+
+Payload bytes are hashed to the `message:` field via `message_from_bytes` (FNV-1a → M31).
 
 ### Bundle text format (`.otm`)
 ```
@@ -132,7 +150,7 @@ prev_backward_y: 8
 
 ---
 
-## 6. Integration (ITS-core / ITS-net)
+## 6. Integration (ITS-core / ITS-routing)
 
 Add to `Cargo.toml`:
 ```toml

@@ -23,6 +23,9 @@ fn test_public_attestation_m31_flow() {
 
     assert!(bool::from(verify_public_attestation(&bundle)));
 
+    // Mathematics §5 golden tag: T = 11 * 415 + 13 = 4578
+    assert_eq!(bundle.tag.value(), 4578);
+
     let bundle2 = signer.sign(
         FieldElement::new(100),
         FieldElement::new(3),

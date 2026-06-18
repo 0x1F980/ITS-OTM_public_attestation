@@ -8,9 +8,10 @@ name = "its_otm"
 path = "src/bin/its_otm.rs"
 
 [dependencies]
+sss_chain = { path = "../SSS_CHAIN" }
 subtle = { version = "2.5.0", default-features = false }
 zeroize = { version = "1.7.0", default-features = false, features = ["derive", "alloc"] }
 
 [features]
 default = []
-m61 = []
+m61 = ["sss_chain/m61"]

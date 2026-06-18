@@ -12,7 +12,7 @@
 
 Publish a `PublicAttestationBundle` alongside parasitic entropy injections. Any auditor verifies integrity without access to Alice's ratchet or Bob's trapdoor.
 
-**ITS-net integration:** AEH commands in `its-net` attach OTM tags; optional `.otm` bundle files enable third-party verification.
+**ITS-routing integration:** AEH commands in `its-routing` attach OTM tags; optional `.otm` bundle files enable third-party verification.
 
 ---
 
