@@ -46,4 +46,4 @@ $$T = k_{\text{mac}} \cdot y + n \pmod p \qquad P_{\text{forge}} \le \frac{1}{p}
 
 - [ITS-OTM_public_attestation_vision.md](ITS-OTM_public_attestation_vision.md)
 - [ITS-OTM_public_attestation_mathematics.md](ITS-OTM_public_attestation_mathematics.md)
-- Parent re-export: [ITS `core_logic::otm`](https://github.com/0x1F464/ITS)
+- Parent crate: [its_transport::otm](https://github.com/0x1F980/ITS-ROUTING) (transport re-export); math in this repo + SSS_CHAIN

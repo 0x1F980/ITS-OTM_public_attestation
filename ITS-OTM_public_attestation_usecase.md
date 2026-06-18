@@ -18,13 +18,7 @@ Publish a `PublicAttestationBundle` alongside parasitic entropy injections. Any 
 
 ## 2. Tunnel & Routing Header Integrity
 
-`ITS` core modules `routing.rs` and `tunnel.rs` use `generate_tag` / `verify_tag` for onion headers and SCPST packets. After migration, these import via:
-
-```rust
-use core_logic::otm::{generate_tag, verify_tag};
-```
-
-For **public** post-hoc audit of a tunnel transmission, publish a bundle:
+`its_transport` modules `onion` and `tunnel` use `its_transport::otm::{generate_tag, verify_tag}` for onion headers and SCPST packets. For **public** post-hoc audit of a tunnel transmission, publish a bundle:
 
 ```rust
 use its_otm_public_attestation::{
