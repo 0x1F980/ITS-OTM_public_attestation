@@ -32,6 +32,7 @@ dependencies = [
 [[package]]
 name = "sss_chain"
 version = "0.1.0"
+source = "git+file:///home/user/SSS_CHAIN#f329bde75e6a9619060843ef1cc89256c6c9d88b"
 dependencies = [
  "subtle",
  "zeroize",
@@ -45,9 +46,9 @@ checksum = "13c2bddecc57b384dee18652358fb23172facb8a2c51ccc10d74c157bdea3292"
 
 [[package]]
 name = "syn"
-version = "2.0.117"
+version = "2.0.118"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e665b8803e7b1d2a727f4023456bbbbe74da67099c585258af0ad9c5013b9b99"
+checksum = "1b9ae57f904213ebb649ce6895b8a66c66f0203b9319718f69a5612a065b1422"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -62,20 +63,48 @@ checksum = "e6e4313cd5fcd3dad5cafa179702e2b244f760991f45397d14d4ebf38247da75"
 
 [[package]]
 name = "zeroize"
-version = "1.8.2"
+version = "1.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b97154e67e32c85465826e8bcc1c59429aaaf107c1e4a9e53c8d8ccd5eff88d0"
+checksum = "e13c156562582aa81c60cb29407084cdb54c4164760106ab78e6c5b0858cf64e"
 dependencies = [
  "zeroize_derive",
 ]
 
 [[package]]
 name = "zeroize_derive"
-version = "1.4.3"
+version = "1.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "85a5b4158499876c763cb03bc4e49185d3cccbabb15b33c627f7884f43db852e"
+checksum = "3c50655cbb0fe3fc43170059e702f1ce5e19b84cec58dc87b037a09935c2f328"
 dependencies = [
  "proc-macro2",
  "quote",
  "syn",
 ]
+
+[[patch.unused]]
+name = "its_routing"
+version = "0.1.0"
+
+[[patch.unused]]
+name = "its_transport"
+version = "0.1.0"
+
+[[patch.unused]]
+name = "sss_chain"
+version = "0.1.0"
+
+[[patch.unused]]
+name = "its_hardware"
+version = "0.1.0"
+
+[[patch.unused]]
+name = "its_fingerprint_erasure"
+version = "0.8.1"
+
+[[patch.unused]]
+name = "its_ledger"
+version = "0.1.0"
+
+[[patch.unused]]
+name = "its_self_enclosed_timelock"
+version = "0.1.0"
