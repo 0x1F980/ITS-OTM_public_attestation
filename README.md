@@ -3,6 +3,8 @@
 ## License: GNU GPLv3 Only
 ## Target: Cryptographers, Security Auditors, High-Assurance Systems Engineers
 
+**ITS = Information-Theoretic Secrecy** — [ecosystem definition](https://github.com/0x1F980/ITS-ROUTING/blob/master/ITS_ECOSYSTEM.md#its--information-theoretic-secrecy). This repo implements WC-MAC **ITS integrity** (OTM attestation).
+
 **Read first:** **[ITS-OTM_SECURITY_LAYERS.md](ITS-OTM_SECURITY_LAYERS.md)** — WC-MAC is ITS; **no SHA256 on attestation tags**. Ecosystem master: [ITS_SECURITY_LAYERS.md](https://github.com/0x1F980/ITS-ROUTING/blob/master/ITS_ECOSYSTEM.md).
 
 Welcome to the **`0x1F980/ITS-OTM_public_attestation`** repository. This is a standalone `#![no_std]` Rust implementation of **Wegman-Carter One-Time MAC** tags bound to **non-reproducible SSS forward/backward chains**, enabling **public verification** without access to the signer's private state.
@@ -22,6 +24,21 @@ its_otm demo
 nix-shell --run "cargo build --release --bin its_otm"   # optional hermetic build
 docker build -t its-otm:local .                         # optional static musl image
 ```
+
+### Shell completions
+
+| Shell | Install |
+|-------|---------|
+| Bash | `source completions/its_otm.bash` |
+| Zsh | `source completions/its_otm.zsh` |
+| Fish | `cp completions/its_otm.fish ~/.config/fish/completions/` |
+| PowerShell | `. ./completions/its_otm.ps1` |
+
+```bash
+man -l man/its_otm.1
+```
+
+**CLI:** `its_otm keygen | sign | verify | demo` — see [manual](ITS-OTM_public_attestation_manual.md).
 
 ---
 

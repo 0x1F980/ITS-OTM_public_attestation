@@ -77,23 +77,25 @@ mod getrandom {
 
 fn usage() -> ! {
     eprintln!(
-        "its_otm v0.1 — ITS-OTM public attestation (WC-MAC + SSS chain)
+        "its_otm — OTM public attestation (Wegman-Carter MAC + SSS chain)
 
-USAGE:
-  its_otm keygen --out STATE
-  its_otm sign --state STATE --in PATH --out PATH
-  its_otm verify --bundle PATH [--payload PATH]
-  its_otm demo
+COMMANDS:
+  keygen   Create a new signer state file
+  sign     Sign a payload into an attestation bundle
+  verify   Verify an attestation bundle (optionally against a payload file)
+  demo     Print and self-verify a demo bundle
 
-PATH may be \"-\" for stdin (read) or stdout (write).
+EXAMPLES:
+  its_otm keygen --out alice.state
+  its_otm sign --state alice.state --in public.key --out public.otm
+  its_otm verify --bundle public.otm --payload public.key
 
-PIPE EXAMPLES:
+  # Pipe from wire encrypt:
   its_asymmetric encrypt --pk public.key --in plain.txt --out - | \\
     its_otm sign --state alice.state --in - --out attestation.otm
-  its_otm sign --state alice.state --in public.key --out pk.otm
-  its_otm verify --bundle attestation.otm --payload msg.wire
 
-State file (alice.state) holds the signer chain; keep local and sequential."
+PATH may be \"-\" for stdin (read) or stdout (write).
+Keep signer state local; each sign advances the chain."
     );
     process::exit(1);
 }

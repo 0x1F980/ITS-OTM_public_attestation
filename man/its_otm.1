@@ -1,0 +1,34 @@
+.TH ITS-OTM 1 "June 2026" "ITS-OTM" "User Commands"
+.SH NAME
+its_otm \- OTM public attestation (Wegman-Carter MAC + SSS chain)
+.SH SYNOPSIS
+.B its_otm
+.I COMMAND
+[\fIOPTIONS\fR]
+.SH DESCRIPTION
+.B its_otm
+signs payloads with a one-time MAC chain and publishes verification bundles
+without revealing the signer state. Verifiers check chain integrity and optional
+payload binding.
+.PP
+PATH may be
+.B -
+for stdin (read) or stdout (write).
+.SH COMMANDS
+.TP
+.B keygen --out STATE
+Create a new signer state file.
+.TP
+.B sign --state STATE --in PATH --out PATH
+Sign a payload; advances the signer chain and updates STATE.
+.TP
+.B verify --bundle PATH [--payload PATH]
+Verify an attestation bundle; optionally check payload matches message field.
+.TP
+.B demo
+Print and self-verify a demo bundle.
+.SH SEE ALSO
+.BR its_asymmetric (1),
+.BR its-km (1)
+.SH AUTHOR
+0x1F980
